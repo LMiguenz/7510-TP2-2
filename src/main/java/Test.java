@@ -13,9 +13,11 @@ public abstract class Test {
 	protected String name;
 	protected TestResult result;
 	protected Fixture fixture;
+	protected TagList tags;
 	
 	public Test (String newName) {
 		name = newName;
+		tags = new TagList();
 	}
 	
 	public abstract void runTest();
@@ -44,6 +46,18 @@ public abstract class Test {
 
 	public Fixture getFixture() {
 		return fixture;	
+	}
+	
+	public void addTag(String tag){
+		tags.add(tag);
+	}
+	
+	public void removeTag(String tag){
+		tags.remove(tag);
+	}
+	
+	public TagList getTags(){
+		return tags;
 	}
 	
 	public boolean equals(Test test) {
