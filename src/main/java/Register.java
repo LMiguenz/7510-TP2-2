@@ -11,4 +11,16 @@ public class Register {
 		this.valueB = valueB;
 		this.result = result;
 	}
+	
+	public Object getValueA() {
+		return valueA;
+	}
+	
+	public Object getValueB() {
+		return valueB;
+	}
+	
+	public Object getRestult() {
+		return result;
+	}
 }

@@ -1,6 +1,5 @@
 package test.java;
 
-import main.java.Affirm;
 import main.java.Test;
 
 public class TestNotEqualsCharTest extends Test {
