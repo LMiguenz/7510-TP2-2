@@ -9,6 +9,7 @@ public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
 	private ResultPrinter printer;
+	private ExecutionStrategy strategy;
 
 	public TestSuite (String newName, ResultPrinter aPrinter) {
 		super(newName);

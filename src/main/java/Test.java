@@ -14,10 +14,12 @@ public abstract class Test {
 	protected TestResult result;
 	protected Fixture fixture;
 	protected TagList tags;
+	protected boolean skip;
 	
 	public Test (String newName) {
 		name = newName;
 		tags = new TagList();
+		skip = false;
 	}
 	
 	public abstract void runTest();
@@ -58,6 +60,14 @@ public abstract class Test {
 	
 	public TagList getTags(){
 		return tags;
+	}
+	
+	public void setToSkip(){
+		skip = true;
+	}
+	
+	public void setNotToSkip(){
+		skip = false;
 	}
 	
 	public boolean equals(Test test) {
