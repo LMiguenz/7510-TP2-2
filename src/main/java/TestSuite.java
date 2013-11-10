@@ -8,15 +8,17 @@ import main.java.TestExistsException;
 public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
+	private ResultPrinter printer;
 
-	public TestSuite (String newName) {
+	public TestSuite (String newName, ResultPrinter aPrinter) {
 		super(newName);
 		tests = new HashMap<String, Test>();
+		printer = aPrinter;
 	}
 	
 	@Override
 	public void runTest() {
-		ResultPrinter.getInstance().addSuite(this.getName());
+		printer.printSuite(this.getName());
 		setUp();
 		
 		Collection<Test> col = tests.values();		
@@ -30,11 +32,11 @@ public class TestSuite extends Test {
 			}
 			test.tearDown();
 			
-			ResultPrinter.getInstance().addTestResults(test);
+			printer.printTest(test);
 		}
 
 		tearDown();
-		ResultPrinter.getInstance().removeSuite(this.getName());
+		printer.removeSuite(this.getName());
 	}
 
 	public void runTest(String pattern) {
@@ -62,6 +64,10 @@ public class TestSuite extends Test {
 					+ " already present in TestSuite "
 					+ this.getName()); 
 		}
+	}
+
+	public ResultPrinter getPrinter() {
+		return printer;
 	}
 
 }
