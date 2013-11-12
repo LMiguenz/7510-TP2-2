@@ -19,6 +19,7 @@ public class TestSuite extends Test {
 	
 	@Override
 	public void runTest() {
+		long timeTestBegins = 0;
 		printer.printSuite(this.getName());
 		setUp();
 		
@@ -26,11 +27,13 @@ public class TestSuite extends Test {
 
 		for (Test test : col) {
 			test.setUp();
+			timeTestBegins = System.currentTimeMillis();
 			try {
 				test.runTest();
 			} catch (Exception e) {
 				test.setResult(new TestResultError(test.getName()));
 			}
+			test.setTimeElapsed(System.currentTimeMillis() - timeTestBegins);
 			test.tearDown();
 			
 			printer.printTest(test);

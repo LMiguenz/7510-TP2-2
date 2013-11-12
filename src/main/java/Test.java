@@ -15,11 +15,13 @@ public abstract class Test {
 	protected Fixture fixture;
 	protected TagList tags;
 	protected boolean skip;
+	protected long timeElapsed;
 	
 	public Test (String newName) {
 		name = newName;
 		tags = new TagList();
 		skip = false;
+		timeElapsed = 0;
 	}
 	
 	public abstract void runTest();
@@ -32,6 +34,14 @@ public abstract class Test {
     
 	public void setName(String newName) {
 		name = newName;
+	}
+	
+	public void setTimeElapsed(long milliSecs) {
+		timeElapsed = milliSecs;
+	}
+	
+	public long getTimeElapsed() {
+		return timeElapsed;
 	}
 	
 	public void setResult(TestResult testResult) {
