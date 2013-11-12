@@ -14,4 +14,9 @@ public class TestResultOk extends TestResult {
 	public void updateMe(ResultPrinter printer) {
 		printer.oneMoreTestOk();
 	}
+
+	@Override
+	public String getCode() {
+		return "Ok";
+	}
 }

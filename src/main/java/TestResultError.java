@@ -14,4 +14,9 @@ public class TestResultError extends TestResult {
 	public void updateMe(ResultPrinter printer) {
 		printer.oneMoreTestErrored();
 	}
+
+	@Override
+	public String getCode() {
+		return "Error";
+	}
 }

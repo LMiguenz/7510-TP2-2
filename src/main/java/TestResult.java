@@ -20,4 +20,6 @@ public abstract class TestResult {
     }
     
     public abstract void updateMe(ResultPrinter printer);
+    
+    public abstract String getCode();
 }

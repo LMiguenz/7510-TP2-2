@@ -14,4 +14,9 @@ public class TestResultFail extends TestResult {
 	public void updateMe(ResultPrinter printer) {
 		printer.oneMoreTestFailed();
 	}
+
+	@Override
+	public String getCode() {
+		return "Fail";
+	}
 }
