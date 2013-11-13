@@ -67,7 +67,11 @@ public class XMLResultPrinter extends ResultPrinter {
 		Attr attr = document.createAttribute("result");
 		attr.setValue(test.getResult().getCode());
 		testElement.setAttributeNode(attr);
-		
+
+		Element executionTime = document.createElement("time");
+		executionTime.appendChild(document.createTextNode(Long.toString(test.getTimeElapsed())  + " ms"));
+		testElement.appendChild(executionTime);
+
 		Integer level = this.level;
 		level--;
 		Element previousElement = getElement(level);
