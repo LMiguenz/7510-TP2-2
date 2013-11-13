@@ -30,6 +30,7 @@ public class TestSuite extends Test {
 			test.setUp();
 			timeSubTestBegins = System.currentTimeMillis();
 			try {
+				test.setPrinter(printer);
 				test.runTest();
 				
 			} catch (Exception e) {
@@ -37,9 +38,8 @@ public class TestSuite extends Test {
 			}
 			test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
 			test.tearDown();
-			
-			printer.printTest(test);
 		}
+		
 		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
 		tearDown();
 		printer.removeSuite(this);

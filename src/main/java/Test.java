@@ -16,6 +16,7 @@ public abstract class Test {
 	protected TagList tags;
 	protected boolean skip;
 	protected long timeElapsed;
+	protected ResultPrinter printer;
 	
 	public Test (String newName) {
 		name = newName;
@@ -58,6 +59,10 @@ public abstract class Test {
 
 	public Fixture getFixture() {
 		return fixture;	
+	}
+
+	protected void setPrinter(ResultPrinter printer) {
+		this.printer = printer;
 	}
 	
 	public void addTag(String tag){
