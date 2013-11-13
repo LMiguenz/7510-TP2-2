@@ -16,6 +16,7 @@ public class TestSuite extends Test {
 		super(newName);
 		tests = new HashMap<String, Test>();
 		tags.add("");
+		strategy = new SelectionAlways();
 		printer = aPrinter;
 	}
 	
