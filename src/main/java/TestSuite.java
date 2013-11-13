@@ -21,33 +21,34 @@ public class TestSuite extends Test {
 	
 	@Override
 	public void runTest() {
-		//this.strategy.strategicSelection();
 		
-		printer.printSuite(this);
-		setUp();
-		long timeTestBegins = System.currentTimeMillis();
-		long timeSubTestBegins = 0;
-		Collection<Test> col = tests.values();
-
-		for (Test test : col) {
-			if( strategy.strategicSelection(test) ){
-				test.setUp();
-				timeSubTestBegins = System.currentTimeMillis();
-				try {
-					test.setPrinter(printer);
-					test.runTest();
-					
-				} catch (Exception e) {
-					test.setResult(new TestResultError(test.getName()));
+		if ( mustBeRunned(this) ){
+			printer.printSuite(this);
+			setUp();
+			long timeTestBegins = System.currentTimeMillis();
+			long timeSubTestBegins = 0;
+			Collection<Test> col = tests.values();
+	
+			for (Test test : col) {
+				if ( mustBeRunned(test) ){
+					test.setUp();
+					timeSubTestBegins = System.currentTimeMillis();
+					try {
+						test.setPrinter(printer);
+						test.runTest();
+						
+					} catch (Exception e) {
+						test.setResult(new TestResultError(test.getName()));
+					}
+					test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
+					test.tearDown();
 				}
-				test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
-				test.tearDown();
 			}
+			
+			this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
+			tearDown();
+			printer.removeSuite(this);
 		}
-		
-		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
-		tearDown();
-		printer.removeSuite(this);
 	}
 		
 	public void runTest(String pattern) {
@@ -87,6 +88,10 @@ public class TestSuite extends Test {
 	
 	public Collection<Test> getTests(){
 		return this.tests.values();
+	}
+	
+	public boolean mustBeRunned(Test test){
+		return !test.isSetToSkip() && strategy.strategicSelection(test);
 	}
 
 }

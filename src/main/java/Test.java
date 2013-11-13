@@ -89,6 +89,10 @@ public abstract class Test {
 		skip = false;
 	}
 	
+	public boolean isSetToSkip(){
+		return skip;
+	}
+	
 	public boolean equals(Test test) {
 		return this.name == test.getName();
 	}
