@@ -1,5 +1,6 @@
 package main.java;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -19,28 +20,29 @@ public class TestSuite extends Test {
 	
 	@Override
 	public void runTest() {
-		long timeTestBegins = 0;
-		printer.printSuite(this.getName());
+		printer.printSuite(this);
 		setUp();
-		
-		Collection<Test> col = tests.values();		
+		long timeTestBegins = System.currentTimeMillis();
+		long timeSubTestBegins = 0;
+		Collection<Test> col = tests.values();
 
 		for (Test test : col) {
 			test.setUp();
-			timeTestBegins = System.currentTimeMillis();
+			timeSubTestBegins = System.currentTimeMillis();
 			try {
 				test.runTest();
+				
 			} catch (Exception e) {
 				test.setResult(new TestResultError(test.getName()));
 			}
-			test.setTimeElapsed(System.currentTimeMillis() - timeTestBegins);
+			test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
 			test.tearDown();
 			
 			printer.printTest(test);
 		}
-
+		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
 		tearDown();
-		printer.removeSuite(this.getName());
+		printer.removeSuite(this);
 	}
 
 	public void runTest(String pattern) {

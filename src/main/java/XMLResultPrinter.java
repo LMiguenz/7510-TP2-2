@@ -55,15 +55,15 @@ public class XMLResultPrinter extends ResultPrinter {
 	}
 	
 	@Override
-	public void printSuite(String suiteName) {
+	public void printSuite(TestSuite suite) {
 		Element testSuiteElement = document.createElement("testsuite");
-		testSuiteElement.setAttribute("name", suiteName);
+		testSuiteElement.setAttribute("name", suite.getName());
 		this.previousElement.appendChild(testSuiteElement);
 		this.previousElement = testSuiteElement;
 	}
 
 	@Override
-	public void removeSuite(String suiteName) {
+	public void removeSuite(TestSuite suite) {
 		// TODO Auto-generated method stub
 
 	}

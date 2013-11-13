@@ -30,9 +30,9 @@ public abstract class ResultPrinter {
 
 	public abstract void printTest(Test test);
 	
-	public abstract void printSuite(String suiteName);
+	public abstract void printSuite(TestSuite suite);
 	
-	public abstract void removeSuite(String suiteName);
+	public abstract void removeSuite(TestSuite suite);
 	
 	public abstract void printSummary();
 	
