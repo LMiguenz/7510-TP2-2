@@ -39,6 +39,9 @@ public class FrameworkTests {
 		TestNotEqualsCharTest testNotEqualsCharTest = new TestNotEqualsCharTest("Test two chars are different using the Test class' methods");
 		TestEqualsCharTest testEqualsCharTest = new TestEqualsCharTest("Test two chars are equal using the Test class' methods");
 		
+		testEqualsObjectTest.addTag("A");
+		testSuiteAll.setToRunByTag("A");
+		
 		try {
 			testSuiteAffirm.addTest(equalsObjectTest);
 			testSuiteAffirm.addTest(notEqualsObjectTest);

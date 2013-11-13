@@ -66,14 +66,18 @@ public abstract class Test {
 	}
 	
 	public void addTag(String tag){
-		tags.add(tag);
+		if(tag != ""){
+			tags.add(tag);
+		}
 	}
 	
 	public void removeTag(String tag){
-		tags.remove(tag);
+		if(tag != ""){
+			tags.remove(tag);
+		}
 	}
 	
-	public TagList getTags(){
+	public TagList getTagList(){
 		return tags;
 	}
 	

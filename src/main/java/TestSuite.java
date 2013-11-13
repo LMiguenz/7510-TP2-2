@@ -10,16 +10,19 @@ public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
 	private ResultPrinter printer;
-	private ExecutionStrategy strategy;
+	private SelectionStrategy strategy;
 
 	public TestSuite (String newName, ResultPrinter aPrinter) {
 		super(newName);
 		tests = new HashMap<String, Test>();
+		tags.add("");
 		printer = aPrinter;
 	}
 	
 	@Override
 	public void runTest() {
+		//this.strategy.strategicSelection();
+		
 		printer.printSuite(this);
 		setUp();
 		long timeTestBegins = System.currentTimeMillis();
@@ -27,24 +30,26 @@ public class TestSuite extends Test {
 		Collection<Test> col = tests.values();
 
 		for (Test test : col) {
-			test.setUp();
-			timeSubTestBegins = System.currentTimeMillis();
-			try {
-				test.setPrinter(printer);
-				test.runTest();
-				
-			} catch (Exception e) {
-				test.setResult(new TestResultError(test.getName()));
+			if( strategy.strategicSelection(test) ){
+				test.setUp();
+				timeSubTestBegins = System.currentTimeMillis();
+				try {
+					test.setPrinter(printer);
+					test.runTest();
+					
+				} catch (Exception e) {
+					test.setResult(new TestResultError(test.getName()));
+				}
+				test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
+				test.tearDown();
 			}
-			test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
-			test.tearDown();
 		}
 		
 		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
 		tearDown();
 		printer.removeSuite(this);
 	}
-
+		
 	public void runTest(String pattern) {
 		setUp();
 		
@@ -74,6 +79,14 @@ public class TestSuite extends Test {
 
 	public ResultPrinter getPrinter() {
 		return printer;
+	}
+	
+	public void setToRunByTag(String tag){
+		strategy = new SelectionByTags(new TagList(tag));
+	}
+	
+	public Collection<Test> getTests(){
+		return this.tests.values();
 	}
 
 }
