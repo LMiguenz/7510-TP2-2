@@ -1,6 +1,5 @@
 package main.java;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -23,26 +22,15 @@ public class TestSuite extends Test {
 	@Override
 	public void runTest() {
 		
-		if ( mustBeRunned(this) ){
+		if (mustBeRun(this)) {
 			printer.printSuite(this);
 			setUp();
 			long timeTestBegins = System.currentTimeMillis();
-			long timeSubTestBegins = 0;
 			Collection<Test> col = tests.values();
 	
 			for (Test test : col) {
-				if ( mustBeRunned(test) ){
-					test.setUp();
-					timeSubTestBegins = System.currentTimeMillis();
-					try {
-						test.setPrinter(printer);
-						test.runTest();
-						
-					} catch (Exception e) {
-						test.setResult(new TestResultError(test.getName()));
-					}
-					test.setTimeElapsed(System.currentTimeMillis() - timeSubTestBegins);
-					test.tearDown();
+				if (mustBeRun(test)) {
+					runSubTest(test);
 				}
 			}
 			
@@ -51,21 +39,26 @@ public class TestSuite extends Test {
 			printer.removeSuite(this);
 		}
 	}
-		
-	public void runTest(String pattern) {
-		setUp();
-		
-		Collection<Test> col = tests.values();
 
-		for (Test test : col) {
-			if (Pattern.matches(pattern, test.getName())) {
-				test.setUp();
-				test.runTest();
-				test.tearDown();
+	public void runTest(String pattern) {
+		
+		if (mustBeRun(this)) {
+			printer.printSuite(this);
+			setUp();
+			long timeTestBegins = System.currentTimeMillis();
+
+			Collection<Test> col = tests.values();
+
+			for (Test test : col) {
+				if (Pattern.matches(pattern, test.getName()) && mustBeRun(test)) {
+					runSubTest(test);
+				}
 			}
+			this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
+			tearDown();
+			printer.removeSuite(this);
 		}
 
-		tearDown();
 	}
 	
 	public void addTest(Test test) throws TestExistsException {
@@ -91,8 +84,14 @@ public class TestSuite extends Test {
 		return this.tests.values();
 	}
 	
-	public boolean mustBeRunned(Test test){
+	public boolean mustBeRun(Test test){
 		return !test.isSetToSkip() && strategy.strategicSelection(test);
 	}
 
+	private void runSubTest(Test test) {
+		test.setUp();
+		test.setPrinter(printer);
+		test.runTest();
+		test.tearDown();
+	}
 }
