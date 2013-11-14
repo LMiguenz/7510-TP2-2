@@ -1,16 +1,16 @@
 package test.java;
 
 import main.java.Affirm;
-import main.java.Test;
+import main.java.TestMethod;
 
-public class NotEqualsCharTest extends Test {
+public class NotEqualsCharTest extends TestMethod {
 
 	public NotEqualsCharTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		notEqualsCharTest();
 	}
 	

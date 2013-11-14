@@ -1,16 +1,16 @@
 package test.java;
 
 import main.java.Affirm;
-import main.java.Test;
+import main.java.TestMethod;
 
-public class EqualsFloatTest extends Test {
+public class EqualsFloatTest extends TestMethod {
 
 	public EqualsFloatTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		equalsFloatTest();
 	}
     

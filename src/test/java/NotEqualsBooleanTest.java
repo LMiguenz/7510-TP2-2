@@ -1,16 +1,16 @@
 package test.java;
 
 import main.java.Affirm;
-import main.java.Test;
+import main.java.TestMethod;
 
-public class NotEqualsBooleanTest extends Test {
+public class NotEqualsBooleanTest extends TestMethod {
 
 	public NotEqualsBooleanTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		notEqualsBooleanTest();
 	}
 	

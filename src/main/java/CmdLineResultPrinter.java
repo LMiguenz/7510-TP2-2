@@ -8,7 +8,7 @@ public class CmdLineResultPrinter extends ResultPrinter {
 	
 	public void printTest(Test test) {
 		try {
-			System.out.println(test.getResult().print());
+			System.out.println(test.getResult().print() + " (" + test.getTimeElapsed() + "ms)");
 			test.getResult().updateMe(this);
 		} catch (NullPointerException e) { }
 	}

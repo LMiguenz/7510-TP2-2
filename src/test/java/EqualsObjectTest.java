@@ -1,16 +1,16 @@
 package test.java;
 
 import main.java.Affirm;
-import main.java.Test;
+import main.java.TestMethod;
 
-public class EqualsObjectTest extends Test {
+public class EqualsObjectTest extends TestMethod {
 
 	public EqualsObjectTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		equalsObjectTest();
 	}
 

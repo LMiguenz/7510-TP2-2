@@ -1,15 +1,15 @@
 package test.java;
 
-import main.java.Test;
+import main.java.TestMethod;
 
-public class TestEqualsFloatTest extends Test {
+public class TestEqualsFloatTest extends TestMethod {
 
 	public TestEqualsFloatTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		testEqualsFloatTest();
 	}
 

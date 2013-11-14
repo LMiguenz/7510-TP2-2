@@ -10,7 +10,13 @@ public abstract class TestMethod extends Test {
 
 	@Override
 	public void runTest() {
-		run();
+		long timeTestBegins = System.currentTimeMillis();
+		try {
+			run();
+		} catch (Exception e) {
+			setResult(new TestResultError(getName()));
+		}
+		setTimeElapsed(System.currentTimeMillis() - timeTestBegins);
 		printer.printTest(this);
 	}
 

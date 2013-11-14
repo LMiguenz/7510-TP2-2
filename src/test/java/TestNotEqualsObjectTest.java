@@ -1,15 +1,15 @@
 package test.java;
 
-import main.java.Test;
+import main.java.TestMethod;
 
-public class TestNotEqualsObjectTest extends Test {
+public class TestNotEqualsObjectTest extends TestMethod {
 
 	public TestNotEqualsObjectTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		testNotEqualsObjectTest();
 	}
 
