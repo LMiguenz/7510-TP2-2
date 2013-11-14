@@ -7,13 +7,13 @@ import main.java.TestExistsException;
 public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
-	private SelectionTemplate strategy;
+	private SelectionTemplate selector;
 
 	public TestSuite (String newName) {
 		super(newName);
 		tests = new HashMap<String, Test>();
 		tags = new TagList(suiteReservedTag);
-		strategy = new SelectionAlways();
+		selector = new SelectionAlways();
 	}
 	
 	@Override
@@ -56,47 +56,47 @@ public class TestSuite extends Test {
 	}
 	
 	public void setToRunByTestName(String testRegex){
-		strategy = new SelectionByTestName(testRegex);
+		selector = new SelectionByTestName(testRegex);
 	}
 	
 	public void setToRunByTag(String tag){
-		strategy = new SelectionByTags(new TagList(tag));
+		selector = new SelectionByTags(new TagList(tag));
 	}
 	
 	public void setToRunByTags(TagList tags){
-		strategy = new SelectionByTags(tags);
+		selector = new SelectionByTags(tags);
 	}
 	
 	public void setToRunByTagsAndTestName(TagList tags, String testRegex){
-		strategy = new SelectionByTagsAndTestName(tags, testRegex);
+		selector = new SelectionByTagsAndTestName(tags, testRegex);
 	}
 	
 	public void setToRunByTagsOrTestName(TagList tags, String testRegex){
-		strategy = new SelectionByTagsOrTestName(tags, testRegex);
+		selector = new SelectionByTagsOrTestName(tags, testRegex);
 	}
 	
 	public void setToRunByTagsAndSuiteName(TagList tags, String suiteRegex){
-		strategy = new SelectionByTagsAndSuiteName(tags, suiteRegex);
+		selector = new SelectionByTagsAndSuiteName(tags, suiteRegex);
 	}
 	
 	public void setToRunByTagsOrSuiteName(TagList tags, String suiteRegex){
-		strategy = new SelectionByTagsOrSuiteName(tags, suiteRegex);
+		selector = new SelectionByTagsOrSuiteName(tags, suiteRegex);
 	}
 	
 	public void setToRunByTagsAndTestNameAndSuiteName(TagList tags, String testRegex, String suiteRegex){
-		strategy = new SelectionByTagsAndTestNameAndSuiteName(tags, testRegex, suiteRegex);
+		selector = new SelectionByTagsAndTestNameAndSuiteName(tags, testRegex, suiteRegex);
 	}
 	
 	public void setToRunByTagsAndTestNameOrSuiteName(TagList tags, String testRegex, String suiteRegex){
-		strategy = new SelectionByTagsAndTestNameOrSuiteName(tags, testRegex, suiteRegex);
+		selector = new SelectionByTagsAndTestNameOrSuiteName(tags, testRegex, suiteRegex);
 	}
 	
 	public void setToRunByTagsOrTestNameAndSuiteName(TagList tags, String testRegex, String suiteRegex){
-		strategy = new SelectionByTagsOrTestNameAndSuiteName(tags, testRegex, suiteRegex);
+		selector = new SelectionByTagsOrTestNameAndSuiteName(tags, testRegex, suiteRegex);
 	}
 	
 	public void setToRunByTagsOrTestNameOrSuiteName(TagList tags, String testRegex, String suiteRegex){
-		strategy = new SelectionByTagsOrTestNameOrSuiteName(tags, testRegex, suiteRegex);
+		selector = new SelectionByTagsOrTestNameOrSuiteName(tags, testRegex, suiteRegex);
 	}
 	
 	public Collection<Test> getTests(){
@@ -104,7 +104,7 @@ public class TestSuite extends Test {
 	}
 	
 	public boolean mustBeRun(Test test){
-		return !test.isSetToSkip() && strategy.isSelected(test);
+		return !test.isSetToSkip() && selector.isSelected(test);
 	}
 	
 	private void runSubTest(Test test) {
