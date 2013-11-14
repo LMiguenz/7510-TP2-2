@@ -2,10 +2,11 @@ package main.java;
 
 import java.util.regex.Pattern;
 
-public class SelectionByTagsOrSuiteName extends SelectionTemplate {
+public class SelectionByTagsOrTestNameOrSuiteName extends SelectionTemplate {
 
-	public SelectionByTagsOrSuiteName(TagList tags, String testSuiteRegex) {
-		super(tags, "", testSuiteRegex);
+	public SelectionByTagsOrTestNameOrSuiteName(TagList tags,
+			String testCaseRegex, String testSuiteRegex) {
+		super(tags, testCaseRegex, testSuiteRegex);
 	}
 
 	@Override
@@ -14,11 +15,15 @@ public class SelectionByTagsOrSuiteName extends SelectionTemplate {
 			return true;
 		}
 		
-		if ( !isRegexValid(testSuiteRegex) ){
+		if ( !isRegexValid(testCaseRegex) || !isRegexValid(testSuiteRegex) ){
 			return false;
 		}
 		
 		if( test.getTagList().containsAtLeastOneOf(tags) ){
+			return true;
+		}
+		
+		if( Pattern.matches(testCaseRegex, test.getName()) ){
 			return true;
 		}
 		
@@ -27,6 +32,7 @@ public class SelectionByTagsOrSuiteName extends SelectionTemplate {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 

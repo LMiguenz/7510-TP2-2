@@ -17,4 +17,8 @@ public abstract class SelectionTemplate {
 	protected boolean isRegexValid(String regex){
 		return (regex != "") && (regex != null);
 	}
+	
+	protected boolean isSuite(Test test){
+		return test.getTagList().getTags().contains(Test.suiteReservedTag);
+	}
 }

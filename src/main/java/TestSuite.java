@@ -77,6 +77,10 @@ public class TestSuite extends Test {
 		return printer;
 	}
 	
+	public void setToRunByTestName(String testRegex){
+		strategy = new SelectionByTestName(testRegex);
+	}
+	
 	public void setToRunByTag(String tag){
 		strategy = new SelectionByTags(new TagList(tag));
 	}
@@ -85,12 +89,36 @@ public class TestSuite extends Test {
 		strategy = new SelectionByTags(tags);
 	}
 	
-	public void setToRunByTagsAndName(TagList tags, String regex){
-		strategy = new SelectionByTagsAndName(tags, regex);
+	public void setToRunByTagsAndTestName(TagList tags, String testRegex){
+		strategy = new SelectionByTagsAndTestName(tags, testRegex);
 	}
 	
-	public void setToRunByTagsOrSuiteName(TagList tags, String regex){
-		strategy = new SelectionByTagsOrSuiteName(tags, regex);
+	public void setToRunByTagsOrTestName(TagList tags, String testRegex){
+		strategy = new SelectionByTagsOrTestName(tags, testRegex);
+	}
+	
+	public void setToRunByTagsAndSuiteName(TagList tags, String suiteRegex){
+		strategy = new SelectionByTagsAndSuiteName(tags, suiteRegex);
+	}
+	
+	public void setToRunByTagsOrSuiteName(TagList tags, String suiteRegex){
+		strategy = new SelectionByTagsOrSuiteName(tags, suiteRegex);
+	}
+	
+	public void setToRunByTagsAndTestNameAndSuiteName(TagList tags, String testRegex, String suiteRegex){
+		strategy = new SelectionByTagsAndTestNameAndSuiteName(tags, testRegex, suiteRegex);
+	}
+	
+	public void setToRunByTagsAndTestNameOrSuiteName(TagList tags, String testRegex, String suiteRegex){
+		strategy = new SelectionByTagsAndTestNameOrSuiteName(tags, testRegex, suiteRegex);
+	}
+	
+	public void setToRunByTagsOrTestNameAndSuiteName(TagList tags, String testRegex, String suiteRegex){
+		strategy = new SelectionByTagsOrTestNameAndSuiteName(tags, testRegex, suiteRegex);
+	}
+	
+	public void setToRunByTagsOrTestNameOrSuiteName(TagList tags, String testRegex, String suiteRegex){
+		strategy = new SelectionByTagsOrTestNameOrSuiteName(tags, testRegex, suiteRegex);
 	}
 	
 	public Collection<Test> getTests(){

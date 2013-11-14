@@ -2,9 +2,9 @@ package main.java;
 
 import java.util.regex.Pattern;
 
-public class SelectionByTagsOrSuiteName extends SelectionTemplate {
+public class SelectionByTagsAndSuiteName extends SelectionTemplate {
 
-	public SelectionByTagsOrSuiteName(TagList tags, String testSuiteRegex) {
+	public SelectionByTagsAndSuiteName(TagList tags, String testSuiteRegex) {
 		super(tags, "", testSuiteRegex);
 	}
 
@@ -18,16 +18,20 @@ public class SelectionByTagsOrSuiteName extends SelectionTemplate {
 			return false;
 		}
 		
+		boolean tagsOK = false;
 		if( test.getTagList().containsAtLeastOneOf(tags) ){
-			return true;
+			tagsOK = true;
 		}
 		
+		boolean suiteOK = false;
 		for( String suiteName : test.getSuites() ){
 			if( Pattern.matches(testSuiteRegex, suiteName) ){
-				return true;
+				suiteOK = true;
+				break;
 			}
 		}
-		return false;
+		
+		return tagsOK && suiteOK;
 	}
 
 }

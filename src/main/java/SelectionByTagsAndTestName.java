@@ -2,15 +2,15 @@ package main.java;
 
 import java.util.regex.Pattern;
 
-public class SelectionByTagsAndName extends SelectionTemplate {
+public class SelectionByTagsAndTestName extends SelectionTemplate {
 
-	public SelectionByTagsAndName(TagList tags, String testCaseRegex) {
+	public SelectionByTagsAndTestName(TagList tags, String testCaseRegex) {
 		super(tags, testCaseRegex, "");
 	}
 	
 	@Override
 	public boolean isSelected(Test test){
-		if ( test.getTagList().getTags().contains(Test.suiteReservedTag) ){
+		if ( isSuite(test) ){
 			return true;
 		}
 		
