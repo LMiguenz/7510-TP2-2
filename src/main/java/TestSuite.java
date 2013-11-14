@@ -80,6 +80,14 @@ public class TestSuite extends Test {
 		strategy = new SelectionByTags(new TagList(tag));
 	}
 	
+	public void setToRunByTags(TagList tags){
+		strategy = new SelectionByTags(tags);
+	}
+	
+	public void setToRunByTagsAndName(TagList tags, String regex){
+		strategy = new SelectionByTagsAndName(tags, regex);
+	}
+	
 	public Collection<Test> getTests(){
 		return this.tests.values();
 	}

@@ -26,4 +26,14 @@ public class TagList {
 	public HashSet<String> getTags(){
 		return tags;
 	}
+	
+	public boolean containsAtLeastOneOf(TagList tagList){
+		for (String tag : tags){
+			if (tagList.getTags().contains(tag)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

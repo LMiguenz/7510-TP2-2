@@ -14,13 +14,9 @@ public class SelectionByTags extends SelectionTemplate {
 			return true;
 		}
 		
-		TagList testTagList = test.getTagList();
-		for (String tag : tags.getTags()){
-			if (testTagList.getTags().contains(tag)){
-				return true;
-			}
+		if( test.getTagList().containsAtLeastOneOf(tags) ){
+			return true;
 		}
-		
 		return false;
 	}
 }
