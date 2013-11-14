@@ -1,6 +1,5 @@
 package test.java;
 
-import main.java.CmdLineResultPrinter;
 import main.java.TestExistsException;
 import main.java.TestSuite;
 import main.java.TestRunner;
@@ -11,11 +10,12 @@ public class FrameworkTests {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		CmdLineResultPrinter printer = new CmdLineResultPrinter();
 		TestRunner testRunner = new TestRunner();
-		TestSuite testSuiteTest = new TestSuite("Test suite for testing Test", printer);
-		TestSuite testSuiteAffirm = new TestSuite("Test suite for testing Affirm", printer);
-		TestSuite testSuiteAll = new TestSuite("Test all", printer);
+//		testRunner.useXMLResultPrinter();
+//		testRunner.useCmdLineResultPrinter();
+		TestSuite testSuiteTest = new TestSuite("Test suite for testing Test");
+		TestSuite testSuiteAffirm = new TestSuite("Test suite for testing Affirm");
+		TestSuite testSuiteAll = new TestSuite("Test all");
 		
 		EqualsObjectTest equalsObjectTest = new EqualsObjectTest("Test two objects are equal");
 		NotEqualsObjectTest notEqualsObjectTest = new NotEqualsObjectTest("Test two objects are different");

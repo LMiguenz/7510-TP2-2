@@ -61,7 +61,7 @@ public abstract class Test {
 		return fixture;	
 	}
 
-	protected void setPrinter(ResultPrinter printer) {
+	public void setPrinter(ResultPrinter printer) {
 		this.printer = printer;
 	}
 	
