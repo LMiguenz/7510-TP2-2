@@ -8,15 +8,15 @@ import main.java.TestExistsException;
 public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
-	private ResultPrinter printer;
 	private SelectionStrategy strategy;
+	private String pattern;
 
-	public TestSuite (String newName, ResultPrinter aPrinter) {
+	public TestSuite (String newName) {
 		super(newName);
 		tests = new HashMap<String, Test>();
 		tags.add("");
 		strategy = new SelectionAlways();
-		printer = aPrinter;
+		pattern = null;
 	}
 	
 	@Override
@@ -30,7 +30,10 @@ public class TestSuite extends Test {
 	
 			for (Test test : col) {
 				if (mustBeRun(test)) {
-					runSubTest(test);
+					if (pattern == null || 
+								Pattern.matches(pattern, test.getName())) {
+						runSubTest(test);
+					}
 				}
 			}
 			
@@ -38,27 +41,6 @@ public class TestSuite extends Test {
 			tearDown();
 			printer.removeSuite(this);
 		}
-	}
-
-	public void runTest(String pattern) {
-		
-		if (mustBeRun(this)) {
-			printer.printSuite(this);
-			setUp();
-			long timeTestBegins = System.currentTimeMillis();
-
-			Collection<Test> col = tests.values();
-
-			for (Test test : col) {
-				if (Pattern.matches(pattern, test.getName()) && mustBeRun(test)) {
-					runSubTest(test);
-				}
-			}
-			this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
-			tearDown();
-			printer.removeSuite(this);
-		}
-
 	}
 	
 	public void addTest(Test test) throws TestExistsException {
@@ -88,6 +70,12 @@ public class TestSuite extends Test {
 		return !test.isSetToSkip() && strategy.strategicSelection(test);
 	}
 
+	public void usePattern(String aPattern) {
+		if (aPattern != "" && aPattern != null) {
+			pattern = aPattern;
+		}
+	}
+	
 	private void runSubTest(Test test) {
 		test.setUp();
 		test.setPrinter(printer);
