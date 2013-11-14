@@ -1,13 +1,13 @@
 package main.java;
 
-public class SelectionAlways extends SelectionStrategy {
+public class SelectionAlways extends SelectionTemplate {
 
 	public SelectionAlways() {
 		super(new TagList(), "", "");
 	}
 
 	@Override
-	public boolean strategicSelection(Test test) {
+	public boolean isSelected(Test test) {
 		return true;
 	}
 

@@ -8,7 +8,7 @@ import main.java.TestExistsException;
 public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
-	private SelectionStrategy strategy;
+	private SelectionTemplate strategy;
 	private String pattern;
 
 	public TestSuite (String newName) {
@@ -85,7 +85,7 @@ public class TestSuite extends Test {
 	}
 	
 	public boolean mustBeRun(Test test){
-		return !test.isSetToSkip() && strategy.strategicSelection(test);
+		return !test.isSetToSkip() && strategy.isSelected(test);
 	}
 
 	public void usePattern(String aPattern) {
