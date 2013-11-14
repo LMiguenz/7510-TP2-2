@@ -18,8 +18,6 @@ import org.w3c.dom.Element;
 
 public class XMLResultPrinter extends ResultPrinter {
 
-	private static XMLResultPrinter instance = null;
-	
 	private Document document;
 	private Element rootElement;
 	private String fileName = "file.xml";
@@ -71,14 +69,6 @@ public class XMLResultPrinter extends ResultPrinter {
 			level--;
 		}
 		return treeElements.get(level);
-	}
-
-	
-	public static XMLResultPrinter getInstance() throws ParserConfigurationException {
-		if(instance == null) {
-			instance = new XMLResultPrinter();
-		}
-		return instance;
 	}
 
 	public void printTest(Test test) {
