@@ -59,6 +59,7 @@ public class TestSuite extends Test {
 	public void addTest(Test test) throws TestExistsException {
 		if (!tests.containsKey(test.getName())) {
 			tests.put(test.getName(), test);
+			test.addSuite(name);
 		}
 		else { 
 			throw new TestExistsException(test.getName() 
@@ -86,6 +87,10 @@ public class TestSuite extends Test {
 	
 	public void setToRunByTagsAndName(TagList tags, String regex){
 		strategy = new SelectionByTagsAndName(tags, regex);
+	}
+	
+	public void setToRunByTagsOrSuiteName(TagList tags, String regex){
+		strategy = new SelectionByTagsOrSuiteName(tags, regex);
 	}
 	
 	public Collection<Test> getTests(){

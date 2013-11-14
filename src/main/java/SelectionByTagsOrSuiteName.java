@@ -1,15 +1,33 @@
 package main.java;
 
+import java.util.regex.Pattern;
+
 public class SelectionByTagsOrSuiteName extends SelectionTemplate {
 
-	public SelectionByTagsOrSuiteName(String tag, String testSuiteRegex) {
-		super(new TagList(tag), "", testSuiteRegex);
+	public SelectionByTagsOrSuiteName(TagList tags, String testSuiteRegex) {
+		super(tags, "", testSuiteRegex);
 	}
 
 	@Override
 	public boolean isSelected(Test test) {
+		if ( test.getTagList().getTags().contains(Test.suiteReservedTag) ){
+			return true;
+		}
+		
+		if ( !isRegexValid(testSuiteRegex) ){
+			return false;
+		}
+		
+		if( test.getTagList().containsAtLeastOneOf(tags) ){
+			return true;
+		}
+		
+		for( String suiteName : test.getSuites() ){
+			if( Pattern.matches(testSuiteRegex, suiteName) ){
+				return true;
+			}
+		}
 		return false;
-		// TODO Auto-generated method stub
 	}
 
 }

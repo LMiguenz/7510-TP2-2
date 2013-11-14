@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.HashSet;
+
 /**
  * This class provides the public interface which can be used for the
  * client's test.
@@ -14,6 +16,7 @@ public abstract class Test {
 	protected TestResult result;
 	protected Fixture fixture;
 	protected TagList tags;
+	protected HashSet<String> suites;
 	static final String suiteReservedTag = "SUITE";
 
 	protected long timeElapsed;
@@ -21,6 +24,7 @@ public abstract class Test {
 	
 	public Test (String newName) {
 		name = newName;
+		suites = new HashSet<String>();
 		timeElapsed = 0;
 	}
 	
@@ -67,6 +71,14 @@ public abstract class Test {
 
 	protected void setPrinter(ResultPrinter printer) {
 		this.printer = printer;
+	}
+	
+	protected void addSuite(String suiteName){
+		this.suites.add(suiteName);
+	}
+	
+	public HashSet<String> getSuites(){
+		return suites;
 	}
 	
 	public boolean equals(Test test) {
