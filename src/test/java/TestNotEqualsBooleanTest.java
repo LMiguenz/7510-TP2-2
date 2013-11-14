@@ -1,15 +1,15 @@
 package test.java;
 
-import main.java.Test;
+import main.java.TestMethod;
 
-public class TestNotEqualsBooleanTest extends Test {
+public class TestNotEqualsBooleanTest extends TestMethod {
 
 	public TestNotEqualsBooleanTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		testNotEqualsBooleanTest();
 	}
 

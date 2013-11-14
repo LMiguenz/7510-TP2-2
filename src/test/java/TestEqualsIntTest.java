@@ -1,15 +1,15 @@
 package test.java;
 
-import main.java.Test;
+import main.java.TestMethod;
 
-public class TestEqualsIntTest extends Test {
+public class TestEqualsIntTest extends TestMethod {
 
 	public TestEqualsIntTest(String newName) {
 		super(newName);
 	}
 
 	@Override
-	public void runTest() {
+	public void run() {
 		testEqualsIntTest();
 	}
 
