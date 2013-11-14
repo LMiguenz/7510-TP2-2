@@ -11,8 +11,6 @@ public class FrameworkTests {
 	 */
 	public static void main(String[] args) {
 		TestRunner testRunner = new TestRunner();
-//		testRunner.useXMLResultPrinter();
-//		testRunner.useCmdLineResultPrinter();
 		TestSuite testSuiteTest = new TestSuite("Test suite for testing Test");
 		TestSuite testSuiteAffirm = new TestSuite("Test suite for testing Affirm");
 		TestSuite testSuiteAll = new TestSuite("Test all");

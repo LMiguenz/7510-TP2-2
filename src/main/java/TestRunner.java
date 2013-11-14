@@ -20,13 +20,11 @@ public class TestRunner {
 		testSuite.setTimeElapsed(System.currentTimeMillis() - timeTestBegins);
 		testSuite.getPrinter().printSummary();
 	}
-	
-	public void useXMLResultPrinter() throws ParserConfigurationException {
-		this.printer = new XMLResultPrinter();
-	}
-	
-	public void useCmdLineResultPrinter() throws ParserConfigurationException {
-		this.printer = new CmdLineResultPrinter();
+
+	public void useThisResultPrinter(ResultPrinter rp) {
+		if (rp != null) {
+			printer = rp;
+		}
 	}
 	
 	public void usePattern(String aPattern){
