@@ -2,21 +2,18 @@ package main.java;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.regex.Pattern;
 import main.java.TestExistsException;
 
 public class TestSuite extends Test {
 
 	private HashMap<String,Test> tests;
 	private SelectionTemplate strategy;
-	private String pattern;
 
 	public TestSuite (String newName) {
 		super(newName);
 		tests = new HashMap<String, Test>();
 		tags = new TagList(suiteReservedTag);
 		strategy = new SelectionAlways();
-		pattern = null;
 	}
 	
 	@Override
@@ -35,25 +32,6 @@ public class TestSuite extends Test {
 		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
 		tearDown();
 		printer.removeSuite(this);
-	}
-
-	public void runTest(String pattern) {
-		
-		printer.printSuite(this);
-		setUp();
-		long timeTestBegins = System.currentTimeMillis();
-
-		Collection<Test> col = tests.values();
-
-		for (Test test : col) {
-			if (Pattern.matches(pattern, test.getName()) && mustBeRun(test)) {
-				runSubTest(test);
-			}
-		}
-		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
-		tearDown();
-		printer.removeSuite(this);
-
 	}
 	
 	public void addTest(Test test) throws TestExistsException {
@@ -127,12 +105,6 @@ public class TestSuite extends Test {
 	
 	public boolean mustBeRun(Test test){
 		return !test.isSetToSkip() && strategy.isSelected(test);
-	}
-
-	public void usePattern(String aPattern) {
-		if (aPattern != "" && aPattern != null) {
-			pattern = aPattern;
-		}
 	}
 	
 	private void runSubTest(Test test) {
