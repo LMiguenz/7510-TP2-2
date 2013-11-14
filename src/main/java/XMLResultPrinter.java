@@ -23,8 +23,9 @@ public class XMLResultPrinter extends ResultPrinter {
 	private Document document;
 	private Element rootElement;
 	private String fileName = "file.xml";
+	// List of element added to the document.
 	private HashMap<Integer, Element> treeElements = new HashMap<Integer, Element>();
-	private Integer level;
+	private Integer level; // Index to reference the treeElements HashMap
 	
 	public XMLResultPrinter() throws ParserConfigurationException {
 		
@@ -96,6 +97,7 @@ public class XMLResultPrinter extends ResultPrinter {
 		Element previousElement = getParentElement(level);
 		previousElement.appendChild(testElement);
 		addElement(testElement);
+		test.getResult().updateMe(this);
 	}
 	
 	@Override
@@ -116,6 +118,7 @@ public class XMLResultPrinter extends ResultPrinter {
 
 	@Override
 	public void printSummary() {
+		addSummaryElement();
 		try {
 			generateDocument();
 		} catch (TransformerException e) {
@@ -123,6 +126,30 @@ public class XMLResultPrinter extends ResultPrinter {
 		}
 	}
 
+	private void addSummaryElement() {
+		int totalTests = okTests + failedTests + errorTests;
+		
+		Element testsPassed = document.createElement("passed");
+		testsPassed.appendChild(document.createTextNode(Integer.toString(okTests)));
+		
+		Element testsFail = document.createElement("fail");
+		testsFail.appendChild(document.createTextNode(Integer.toString(failedTests)));
+		
+		Element testsError = document.createElement("error");
+		testsError.appendChild(document.createTextNode(Integer.toString(errorTests)));
+		
+		Element summary = document.createElement("summary");
+		summary.setAttribute("total_tests", Integer.toString(totalTests));
+
+		summary.appendChild(testsPassed);
+		summary.appendChild(testsFail);
+		summary.appendChild(testsError);
+		
+		// Get root element
+		Element rootElement = treeElements.get(0);
+		rootElement.appendChild(summary);
+	}
+	
 	private void generateDocument() throws TransformerException {
 		// Write the content into xml file
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
