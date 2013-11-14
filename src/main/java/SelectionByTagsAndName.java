@@ -1,13 +1,13 @@
 package main.java;
 
-public class SelectionByTagsAndName extends SelectionStrategy {
+public class SelectionByTagsAndName extends SelectionTemplate {
 
 	public SelectionByTagsAndName(TagList tags, String testCaseRegex) {
 		super(tags, testCaseRegex, "");
 	}
 	
 	@Override
-	public boolean strategicSelection(Test test){
+	public boolean isSelected(Test test){
 		return false;
 		// TODO Auto-generated method stub
 	}

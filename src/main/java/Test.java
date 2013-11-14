@@ -14,17 +14,17 @@ public abstract class Test {
 	protected TestResult result;
 	protected Fixture fixture;
 	protected TagList tags;
-	protected boolean skip;
+	static final String suiteReservedTag = "SUITE";
+
 	protected long timeElapsed;
 	protected ResultPrinter printer;
 	
 	public Test (String newName) {
 		name = newName;
-		tags = new TagList();
-		skip = false;
 		timeElapsed = 0;
 	}
 	
+	public abstract boolean isSetToSkip();
 	public abstract void runTest();
 	public void setUp() { };
 	public void tearDown() { };
@@ -60,37 +60,13 @@ public abstract class Test {
 	public Fixture getFixture() {
 		return fixture;	
 	}
-
-	public void setPrinter(ResultPrinter printer) {
-		this.printer = printer;
-	}
-	
-	public void addTag(String tag){
-		if(tag != ""){
-			tags.add(tag);
-		}
-	}
-	
-	public void removeTag(String tag){
-		if(tag != ""){
-			tags.remove(tag);
-		}
-	}
 	
 	public TagList getTagList(){
 		return tags;
 	}
-	
-	public void setToSkip(){
-		skip = true;
-	}
-	
-	public void setNotToSkip(){
-		skip = false;
-	}
-	
-	public boolean isSetToSkip(){
-		return skip;
+
+	protected void setPrinter(ResultPrinter printer) {
+		this.printer = printer;
 	}
 	
 	public boolean equals(Test test) {

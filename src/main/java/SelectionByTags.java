@@ -1,19 +1,26 @@
 package main.java;
 
-public class SelectionByTags extends SelectionStrategy {
+//import main.java.Test;
+
+public class SelectionByTags extends SelectionTemplate {
 
 	public SelectionByTags(TagList tags) {
 		super(tags, "", "");
 	}
 	
 	@Override
-	public boolean strategicSelection(Test test){
-		if ( test.getTagList().getTags().contains("") ){
+	public boolean isSelected(Test test){
+		if ( test.getTagList().getTags().contains(Test.suiteReservedTag) ){
 			return true;
 		}
-		if ( test.getTagList().getTags().containsAll(tags.getTags()) ){
-			return true;
+		
+		TagList testTagList = test.getTagList();
+		for (String tag : tags.getTags()){
+			if (testTagList.getTags().contains(tag)){
+				return true;
+			}
 		}
+		
 		return false;
 	}
 }
