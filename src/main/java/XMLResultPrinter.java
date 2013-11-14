@@ -37,7 +37,6 @@ public class XMLResultPrinter extends ResultPrinter {
 		this.document = docBuilder.newDocument();
 		this.rootElement = document.createElement("UnitTest");
 		document.appendChild(rootElement);
-		//this.previousElement = this.rootElement;
 		this.level = 0;
 		addElement(rootElement);
 	}
@@ -47,12 +46,34 @@ public class XMLResultPrinter extends ResultPrinter {
 		this.level++;
 	}
 	
-	private Element getElement(Integer level) {
+	private Element getParentElement(Integer level) {
+		// Loking for an element "testsuite" or "UnitTest"
 		while ("testcase" == treeElements.get(level).getNodeName()) {
 			level--;
 		}
 		return treeElements.get(level);
 	}
+
+	private Element getSuiteParentElement(Integer level) {
+		boolean previousElementWasATest = false;
+		
+		// Check if previous element was a Test
+		if ("testcase" == treeElements.get(level).getNodeName()) {
+			// In this case, I have to decrease one more level to find the parent
+			previousElementWasATest = true;
+		}
+		
+		// Loking for an element "testsuite" or "UnitTest"
+		while ("testcase" == treeElements.get(level).getNodeName()) {
+			level--;
+		}
+
+		if (previousElementWasATest) {
+			level--;
+		}
+		return treeElements.get(level);
+	}
+
 	
 	public static XMLResultPrinter getInstance() throws ParserConfigurationException {
 		if(instance == null) {
@@ -74,7 +95,7 @@ public class XMLResultPrinter extends ResultPrinter {
 
 		Integer level = this.level;
 		level--;
-		Element previousElement = getElement(level);
+		Element previousElement = getParentElement(level);
 		previousElement.appendChild(testElement);
 		addElement(testElement);
 	}
@@ -86,15 +107,13 @@ public class XMLResultPrinter extends ResultPrinter {
 
 		Integer level = this.level;
 		level--;
-		Element previousElement = getElement(level);
+		Element previousElement = getSuiteParentElement(level);
 		previousElement.appendChild(testSuiteElement);
 		addElement(testSuiteElement);
 	}
 
 	@Override
 	public void removeSuite(TestSuite suite) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -113,8 +132,6 @@ public class XMLResultPrinter extends ResultPrinter {
 		DOMSource source = new DOMSource(this.document);
 		StreamResult result = new StreamResult(new File(fileName));
  
-		// Output to console for testing
-		// StreamResult result = new StreamResult(System.out);
  		transformer.transform(source, result);
 	}
 }

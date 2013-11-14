@@ -4,9 +4,11 @@
 *.jar
 *.war
 *.ear
+*.xml
 
 .settings/*
 bin/*
 .classpath
 .project
 target/*
+
