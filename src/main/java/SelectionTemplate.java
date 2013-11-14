@@ -13,4 +13,8 @@ public abstract class SelectionTemplate {
 	}
 	
 	public abstract boolean isSelected(Test test);
+	
+	protected boolean isRegexValid(String regex){
+		return (regex != "") && (regex != null);
+	}
 }
