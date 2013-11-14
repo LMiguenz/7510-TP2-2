@@ -1,6 +1,5 @@
 package main.java;
 
-import javax.xml.parsers.ParserConfigurationException;
 
 public class TestRunner {
 	
