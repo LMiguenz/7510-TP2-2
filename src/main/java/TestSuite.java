@@ -14,7 +14,7 @@ public class TestSuite extends Test {
 	public TestSuite (String newName, ResultPrinter aPrinter) {
 		super(newName);
 		tests = new HashMap<String, Test>();
-		tags.add("");
+		tags = new TagList(suiteReservedTag);
 		strategy = new SelectionAlways();
 		printer = aPrinter;
 	}
@@ -22,42 +22,40 @@ public class TestSuite extends Test {
 	@Override
 	public void runTest() {
 		
-		if (mustBeRun(this)) {
-			printer.printSuite(this);
-			setUp();
-			long timeTestBegins = System.currentTimeMillis();
-			Collection<Test> col = tests.values();
-	
-			for (Test test : col) {
-				if (mustBeRun(test)) {
-					runSubTest(test);
-				}
+		printer.printSuite(this);
+		setUp();
+		long timeTestBegins = System.currentTimeMillis();
+		Collection<Test> col = tests.values();
+
+		for (Test test : col) {
+			if (mustBeRun(test)) {
+				runSubTest(test);
 			}
-			
-			this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
-			tearDown();
-			printer.removeSuite(this);
 		}
+		
+		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
+		tearDown();
+		printer.removeSuite(this);
 	}
 
 	public void runTest(String pattern) {
 		
-		if (mustBeRun(this)) {
-			printer.printSuite(this);
-			setUp();
-			long timeTestBegins = System.currentTimeMillis();
+		//if (mustBeRun(this)) {
+		printer.printSuite(this);
+		setUp();
+		long timeTestBegins = System.currentTimeMillis();
 
-			Collection<Test> col = tests.values();
+		Collection<Test> col = tests.values();
 
-			for (Test test : col) {
-				if (Pattern.matches(pattern, test.getName()) && mustBeRun(test)) {
-					runSubTest(test);
-				}
+		for (Test test : col) {
+			if (Pattern.matches(pattern, test.getName()) && mustBeRun(test)) {
+				runSubTest(test);
 			}
-			this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
-			tearDown();
-			printer.removeSuite(this);
 		}
+		this.timeElapsed = (System.currentTimeMillis() - timeTestBegins);
+		tearDown();
+		printer.removeSuite(this);
+		//}
 
 	}
 	
@@ -70,6 +68,11 @@ public class TestSuite extends Test {
 					+ " already present in TestSuite "
 					+ this.getName()); 
 		}
+	}
+	
+	@Override
+	public boolean isSetToSkip(){
+		return false;
 	}
 
 	public ResultPrinter getPrinter() {

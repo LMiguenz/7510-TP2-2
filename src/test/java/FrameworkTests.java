@@ -40,7 +40,8 @@ public class FrameworkTests {
 		TestEqualsCharTest testEqualsCharTest = new TestEqualsCharTest("Test two chars are equal using the Test class' methods");
 		
 		testEqualsObjectTest.addTag("A");
-		testSuiteAll.setToRunByTag("A");
+		testSuiteTest.setToRunByTag("A");
+		testSuiteAffirm.setToRunByTag("A");
 		
 		try {
 			testSuiteAffirm.addTest(equalsObjectTest);
