@@ -1,5 +1,3 @@
-package main.java;
-
 /**
  * This class provides the methods to compare different type of
  * variables.

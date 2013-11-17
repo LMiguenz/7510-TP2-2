@@ -1,4 +1,3 @@
-package main.java;
 /**
  * This class works as the user visual interface of the testing framework, 
  * printing the report of the tests executed and their results

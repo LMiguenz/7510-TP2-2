@@ -1,6 +1,3 @@
-package test.java;
-
-import main.java.TestMethod;
 
 public class TestEqualsBooleanTest extends TestMethod {
 

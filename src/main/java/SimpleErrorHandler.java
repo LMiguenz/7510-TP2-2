@@ -1,4 +1,3 @@
-package main.java;
 
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;

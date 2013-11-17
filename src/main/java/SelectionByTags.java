@@ -1,5 +1,3 @@
-package main.java;
-
 //import main.java.Test;
 
 public class SelectionByTags extends SelectionTemplate {

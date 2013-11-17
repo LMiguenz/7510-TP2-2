@@ -1,8 +1,6 @@
-package main.java;
 
 import java.util.Collection;
 import java.util.HashMap;
-import main.java.TestExistsException;
 
 public class TestSuite extends Test {
 

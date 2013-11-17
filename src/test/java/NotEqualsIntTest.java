@@ -1,7 +1,3 @@
-package test.java;
-
-import main.java.Affirm;
-import main.java.TestMethod;
 
 public class NotEqualsIntTest extends TestMethod {
 

@@ -1,8 +1,3 @@
-package test.java;
-
-import main.java.TestExistsException;
-import main.java.TestSuite;
-import main.java.TestRunner;
 
 public class FrameworkTests {
 

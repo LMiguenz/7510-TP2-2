@@ -1,4 +1,3 @@
-package main.java;
 
 /**
  * This class collects the result of a test and shows the result

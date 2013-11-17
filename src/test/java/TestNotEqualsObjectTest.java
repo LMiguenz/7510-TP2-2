@@ -1,6 +1,4 @@
-package test.java;
 
-import main.java.TestMethod;
 
 public class TestNotEqualsObjectTest extends TestMethod {
 
