@@ -1,12 +1,12 @@
 package grupo16.tp2_3;
 
-import junit.framework.TestSuite;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import unitTestFWK.TestExistsException;
 import unitTestFWK.TestRunner;
+import unitTestFWK.TestSuite;
 
 public class testsEnunciado {
 
@@ -21,5 +21,13 @@ public class testsEnunciado {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
 		TestCase1 testCase = new TestCase1("T1");
+
+		try {
+			testSuite.addTest(testCase);
+		}
+		catch (TestExistsException e) {
+			e.printStackTrace();
+		}
+		testRunner.startTesting(testSuite);
 	}
 }
