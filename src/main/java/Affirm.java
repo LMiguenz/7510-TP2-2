@@ -5,6 +5,8 @@
  * @author Miguenz, Rodriguez, Suárez
  *
  */
+
+
 public class Affirm {
 
     public static boolean checkEquals(Object a, Object b) {
