@@ -14,5 +14,4 @@ public class NotEqualsBooleanTest extends TestMethod {
     	assertEquals("notEqualsBooleanTest", true, Affirm.checkNotEquals(true, false));
         assertEquals("notEqualsBooleanTest", false, Affirm.checkNotEquals(true, true));
     }
-
 }
