@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="unitTestFWK.CmdLineResultPrinter" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/CmdLineResultPrinter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="160" x="2688" y="1229"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="unitTestFWK.Register" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/Register.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1686" y="1116"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="unitTestFWK.Fixture" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/Fixture.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="185" x="1588" y="768"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="unitTestFWK.ResultPrinter" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/ResultPrinter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2778" y="988"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="unitTestFWK.SelectionByTagsAndSuiteName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsAndSuiteName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="249" x="46" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="unitTestFWK.Test" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/Test.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="691" width="244" x="2404" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="unitTestFWK.SelectionAlways" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionAlways.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="143" x="335" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="unitTestFWK.TestSuite" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestSuite.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="421" width="373" x="1991" y="768"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="unitTestFWK.SelectionByTagsOrSuiteName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsOrSuiteName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="242" x="518" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="unitTestFWK.TestResultFail" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestResultFail.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="166" x="2070" y="1229"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="unitTestFWK.TagList" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TagList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="187" width="215" x="3279" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="unitTestFWK.SelectionByTagsAndTestName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsAndTestName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="245" x="800" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="unitTestFWK.SelectionByTagsAndTestNameOrSuiteName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsAndTestNameOrSuiteName.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="341" x="1085" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="unitTestFWK.SelectionByTagsOrTestName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsOrTestName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="238" x="1466" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="unitTestFWK.TestResultError" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestResultError.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="166" x="2276" y="1229"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="unitTestFWK.SelectionByTagsOrTestNameAndSuiteName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsOrTestNameAndSuiteName.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="341" x="1744" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="unitTestFWK.SelectionByTestName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTestName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="166" x="2125" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="unitTestFWK.SelectionByTagsAndTestNameAndSuiteName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsAndTestNameAndSuiteName.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="348" x="2331" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="unitTestFWK.XMLResultPrinter" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/XMLResultPrinter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="331" width="228" x="2888" y="1229"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="unitTestFWK.SimpleErrorHandler" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SimpleErrorHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="196" x="689" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="unitTestFWK.SelectionByTags" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTags.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="146" x="2719" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="unitTestFWK.TestRunner" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestRunner.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2800" y="698"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="unitTestFWK.TestResultOk" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestResultOk.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="166" x="2482" y="1229"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="unitTestFWK.SelectionByTagsOrTestNameOrSuiteName" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsOrTestNameOrSuiteName.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="97" width="334" x="2905" y="1600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="unitTestFWK.TestMethod" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestMethod.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="223" width="138" x="1813" y="768"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="unitTestFWK.SelectionTemplate" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/SelectionTemplate.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="217" x="1744" y="1229"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="unitTestFWK.TestExistsException" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestExistsException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="155" x="1567" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="unitTestFWK.TestResult" project="unitTestFWK" 
+    file="/unitTestFWK/src/main/java/unitTestFWK/TestResult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2557" y="1101"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="31">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <association id="33">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="34" name="tags"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="42">    
+    <bendpoint x="3146" y="768"/>    
+    <bendpoint x="3146" y="1229"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="43" name="tags"/>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="46" name="fixture"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <association id="51">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="52" name="selector"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="55">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="56" name="registers"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="60">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="61">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="62" name="result"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="65" name="printer"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="68">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="69" name="printer"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
