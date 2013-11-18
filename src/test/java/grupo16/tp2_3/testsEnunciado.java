@@ -1,10 +1,12 @@
 package grupo16.tp2_3;
 
-
+import junit.framework.TestSuite;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import unitTestFWK.TestRunner;
 
 public class testsEnunciado {
 
@@ -16,7 +18,8 @@ public class testsEnunciado {
 
 	@Test
 	public void testPerformance() {
-		TestSuite1 testSuite = new TestSuite1();
+		TestRunner testRunner = new TestRunner();
+		TestSuite testSuite = new TestSuite("TS");
+		TestCase1 testCase = new TestCase1("T1");
 	}
-
 }
