@@ -25,7 +25,6 @@ public abstract class TestMethod extends Test {
 		}
 		setTimeElapsed(System.currentTimeMillis() - timeTestBegins);
 		if (hasTimeLimit() && (getTimeElapsed() > getTimeLimit())) {
-			System.out.println("\n!!!TIME ELAPSED TOO LONG!!!");
 			setResult(new TestResultFail(getName()));
 		}
 		printer.printTest(this);

@@ -1,10 +1,13 @@
 package grupo16.tp2_3;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import unitTestFWK.TestExistsException;
+import unitTestFWK.TestResultOk;
 import unitTestFWK.TestRunner;
 import unitTestFWK.TestSuite;
 
@@ -29,6 +32,9 @@ public class testUnitFwk2 {
 		catch (TestExistsException e) {
 			e.printStackTrace();
 		}
+
 		testRunner.startTesting(testSuite);
+		TestResultOk resultExpectedOk = new TestResultOk("expectedOk");
+		assertEquals(resultExpectedOk.getCode(), testCase.getResult().getCode());
 	}
 }
