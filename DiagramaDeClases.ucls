@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="unitTestFWK.Register" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/Register.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1686" y="1116"/>    
+    <position height="187" width="170" x="1534" y="1229"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="unitTestFWK.ResultPrinter" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/ResultPrinter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2778" y="988"/>    
+    <position height="349" width="174" x="2688" y="768"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -175,16 +175,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="unitTestFWK.SimpleErrorHandler" project="unitTestFWK" 
-    file="/unitTestFWK/src/main/java/unitTestFWK/SimpleErrorHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="133" width="196" x="689" y="37"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="21" language="java" name="unitTestFWK.SelectionByTags" project="unitTestFWK" 
+  <class id="20" language="java" name="unitTestFWK.SelectionByTags" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTags.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="97" width="146" x="2719" y="1600"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -193,16 +184,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="unitTestFWK.TestRunner" project="unitTestFWK" 
+  <class id="21" language="java" name="unitTestFWK.TestRunner" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/TestRunner.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2800" y="698"/>    
+    <position height="115" width="217" x="2688" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="unitTestFWK.TestResultOk" project="unitTestFWK" 
+  <class id="22" language="java" name="unitTestFWK.TestResultOk" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/TestResultOk.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="133" width="166" x="2482" y="1229"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -211,7 +202,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="unitTestFWK.SelectionByTagsOrTestNameOrSuiteName" project="unitTestFWK" 
+  <class id="23" language="java" name="unitTestFWK.SelectionByTagsOrTestNameOrSuiteName" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/SelectionByTagsOrTestNameOrSuiteName.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="97" width="334" x="2905" y="1600"/>    
@@ -221,16 +212,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="unitTestFWK.TestMethod" project="unitTestFWK" 
+  <class id="24" language="java" name="unitTestFWK.TestMethod" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/TestMethod.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="223" width="138" x="1813" y="768"/>    
+    <position height="313" width="138" x="1813" y="768"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="unitTestFWK.SelectionTemplate" project="unitTestFWK" 
+  <class id="25" language="java" name="unitTestFWK.SelectionTemplate" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/SelectionTemplate.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="169" width="217" x="1744" y="1229"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -239,160 +230,151 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="unitTestFWK.TestExistsException" project="unitTestFWK" 
-    file="/unitTestFWK/src/main/java/unitTestFWK/TestExistsException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="97" width="155" x="1567" y="37"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="28" language="java" name="unitTestFWK.TestResult" project="unitTestFWK" 
+  <class id="26" language="java" name="unitTestFWK.TestResult" project="unitTestFWK" 
     file="/unitTestFWK/src/main/java/unitTestFWK/TestResult.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2557" y="1101"/>    
+    <position height="151" width="166" x="2404" y="768"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="28">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
   <generalization id="29">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="26"/>  
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="25"/>  
   </generalization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="32">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <association id="33">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="34" name="tags"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+  <association id="30">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="31" name="tags"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="18"/>    
+  <generalization id="33">    
+    <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="26"/>  
   </generalization>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="38">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <association id="42">    
+  <association id="34">    
     <bendpoint x="3146" y="768"/>    
     <bendpoint x="3146" y="1229"/>    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="43" name="tags"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
+      <attribute id="35" name="tags"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="45">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="46" name="fixture"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="48">    
+  <generalization id="37">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="38">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="6"/>  
   </generalization>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="50">    
+  <generalization id="39">    
     <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="26"/>  
   </generalization>  
-  <association id="51">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="52" name="selector"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="54">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="28"/>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="25"/>  
   </generalization>  
-  <association id="55">    
+  <generalization id="42">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="43">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="56" name="registers"/>      
-      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+      <attribute id="44" name="registers"/>      
+      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="58">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <generalization id="60">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <association id="61">    
+  <association id="46">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="62" name="result"/>      
-      <multiplicity id="63" minimum="0" maximum="1"/>    
+      <attribute id="47" name="fixture"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="64">    
+  <generalization id="49">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="53">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="65" name="printer"/>      
-      <multiplicity id="66" minimum="0" maximum="1"/>    
+      <attribute id="54" name="printer"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="67">    
+  <generalization id="56">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="68">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="69" name="printer"/>      
-      <multiplicity id="70" minimum="0" maximum="1"/>    
+  <generalization id="57">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="59">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="60" name="result"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="63">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="64" name="printer"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="67" name="selector"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
