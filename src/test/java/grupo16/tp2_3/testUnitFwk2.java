@@ -8,7 +8,7 @@ import unitTestFWK.TestExistsException;
 import unitTestFWK.TestRunner;
 import unitTestFWK.TestSuite;
 
-public class testsEnunciado {
+public class testUnitFwk2 {
 
 	@Before
 	public void setUp() throws Exception {}
@@ -21,6 +21,7 @@ public class testsEnunciado {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
 		TestCase1 testCase = new TestCase1("T1");
+		testCase.setTimeLimit(6000);
 
 		try {
 			testSuite.addTest(testCase);

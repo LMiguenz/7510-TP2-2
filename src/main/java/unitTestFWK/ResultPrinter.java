@@ -13,7 +13,7 @@ public abstract class ResultPrinter {
 
 	protected String SEPARATOR = "----------------";
 	protected String DOUBLE_SEPARATOR = "================";
-	protected String SUMMARY_HDR = "[failure] Summary";
+	protected String SUMMARY_HDR = "Test Summary Report";
 	protected String suiteName;
 	protected ArrayList<String> buffer;
 	protected int failedTests;

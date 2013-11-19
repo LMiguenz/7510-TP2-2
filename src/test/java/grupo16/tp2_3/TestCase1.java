@@ -10,6 +10,15 @@ public class TestCase1 extends TestMethod {
 
 	@Override
 	public void run() {
-		System.out.println("T1 Performance Test");
+		System.out.println("\nT1 Performance Test");
+		try {
+			Thread.sleep(5000);;
+		}
+		catch (InterruptedException e) {}
+		equalsTrueTest();
+	}
+	
+	private void equalsTrueTest() {
+		assertTrue("equalsTrueTest", true);
 	}
 }
