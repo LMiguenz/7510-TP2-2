@@ -23,7 +23,7 @@ public class testUnitFwk2 {
 	public void testPerformance() {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
-		TestCase1 testCase = new TestCase1("T1");
+		TestCasePerformance testCase = new TestCasePerformance("T1");
 		testCase.setTimeLimit(6000);
 
 		try {

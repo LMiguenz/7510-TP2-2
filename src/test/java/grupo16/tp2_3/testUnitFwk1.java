@@ -24,7 +24,7 @@ public class testUnitFwk1 {
 	public void testPerformance() {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
-		TestCase1 testCase = new TestCase1("T1");
+		TestCasePerformance testCase = new TestCasePerformance("T1");
 		try {
 			testSuite.addTest(testCase);
 		}

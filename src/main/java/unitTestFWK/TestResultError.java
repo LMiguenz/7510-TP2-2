@@ -1,11 +1,12 @@
 package unitTestFWK;
 
+
 public class TestResultError extends TestResult {
 
 	public TestResultError(String testName) {
-		super (testName);
+		super(testName);
 	}
-	
+
 	public String print() {
 		return "[error] " + this.testName;
 	}
