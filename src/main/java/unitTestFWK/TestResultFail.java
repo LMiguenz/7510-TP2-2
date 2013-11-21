@@ -4,6 +4,7 @@ public class TestResultFail extends TestResult {
 	
 	public TestResultFail(String testName) {
 		super (testName);
+		setCodigo("FAIL");
 	}
 	
 	public String print() {

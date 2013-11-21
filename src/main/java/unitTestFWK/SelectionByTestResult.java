@@ -10,12 +10,10 @@ public class SelectionByTestResult extends SelectionTemplate {
 
 		@Override
 		public boolean isSelected(Test test){
-			TestResultOk esperado = new TestResultOk("T1");
-			TestResult actual = xml.get(test.getName());
 			boolean validate = true;
 
 			if (xml.containsKey(test.getName())){
-				if ( actual.getTestName() != esperado.getTestName()){
+				if ( test.getResult().getCodigo() != "OK"){
 					validate = true;
 				}else{
 					validate = false;

@@ -5,6 +5,7 @@ public class TestResultError extends TestResult {
 
 	public TestResultError(String testName) {
 		super(testName);
+		setCodigo("ERROR");
 	}
 
 	public String print() {
