@@ -17,6 +17,6 @@ public class TestResultOk extends TestResult {
 
 	@Override
 	public String getCode() {
-		return "Ok";
+		return TEST_OK_CODE;
 	}
 }

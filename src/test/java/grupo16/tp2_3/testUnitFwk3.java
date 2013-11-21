@@ -2,21 +2,18 @@ package grupo16.tp2_3;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.HashMap;
-import java.util.HashSet;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import unitTestFWK.MemoryHashStorage;
+import unitTestFWK.Storage;
 import unitTestFWK.TestExistsException;
-import unitTestFWK.TestResult;
 import unitTestFWK.TestResultError;
 import unitTestFWK.TestResultFail;
 import unitTestFWK.TestResultOk;
 import unitTestFWK.TestRunner;
 import unitTestFWK.TestSuite;
-import unitTestFWK.XMLResultHistory;
 
 public class testUnitFwk3 {
 
@@ -27,7 +24,7 @@ public class testUnitFwk3 {
 	public void tearDown() throws Exception {}
 
 	@Test
-	public void testPerformance() {
+	public void testStorageWithFailedAndErrorAndNew() {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
 		TestCaseOk testCase1 = new TestCaseOk("T1");
@@ -48,7 +45,9 @@ public class testUnitFwk3 {
 			e.printStackTrace();
 		}
 
-		testRunner.setXMLHistoryFileName("history.xml");
+//		Storage storage = new XMLStorage("history.xml");
+		Storage storage = new MemoryHashStorage();
+		testRunner.setStorage(storage);
 
 		/* Corrida inicial */
 		testRunner.startTesting(testSuite);
@@ -67,17 +66,17 @@ public class testUnitFwk3 {
 		 * que se encontro de hacer un assert de que no fue ejecutado) */
 		/* Tambien le cambio los valores a los tests T2 y T3 para mostrar
 		 * que se vuelven a ejecutar */
-//		testCase1.assertTrue(null, false);
-//		testCase2.assertTrue(null, true);
-//		testCase3.assertTrue(null, true);
+		testCase1.assertTrue(null, false);
+		testCase2.assertTrue(null, true);
+		testCase3.assertTrue(null, true);
 
 		/* Chequeo los cambios de resultados */
-//		assertEquals(resultExpectedFail.getCode(), testCase1.getResult()
-//				.getCode());
-//		assertEquals(resultExpectedOk.getCode(), testCase2.getResult()
-//				.getCode());
-//		assertEquals(resultExpectedOk.getCode(), testCase3.getResult()
-//				.getCode());
+		assertEquals(resultExpectedFail.getCode(), testCase1.getResult()
+				.getCode());
+		assertEquals(resultExpectedOk.getCode(), testCase2.getResult()
+				.getCode());
+		assertEquals(resultExpectedOk.getCode(), testCase3.getResult()
+				.getCode());
 
 		try {
 			testSuite.addTest(testCase4);
@@ -87,25 +86,12 @@ public class testUnitFwk3 {
 		}
 
 		/* Hago de nuevo la corrida */
-		// TODO poner la llamada al run que solo ejecute los fallidos segun
-		// un archivo xml de historial
+		testSuite.setToRunByTestResult(storage.restoreSuiteResults());;
 
-		//testRunner.showXMLHistoryFileName("history.xml");
-		
-		HashMap<String, TestResult> xmlHardCode = new HashMap<String, TestResult>();
-		xmlHardCode.put(testCase1.getName(), testCase1.getResult());
-		xmlHardCode.put(testCase2.getName(), testCase2.getResult());
-		xmlHardCode.put(testCase3.getName(), testCase3.getResult());
-		
-		
-		
-		testSuite.setToRunByTestResult(xmlHardCode);
-		//testRunner.showXMLHistoryFileName("/home/pelele/Descargas/history.xml");
-		
 		testRunner.startTesting(testSuite);
 
 		/* Verifico la nueva corrida */
-		assertEquals(resultExpectedOk.getCode(), testCase1.getResult()
+		assertEquals(resultExpectedFail.getCode(), testCase1.getResult()
 				.getCode());
 		assertEquals(resultExpectedError.getCode(), testCase2.getResult()
 				.getCode());

@@ -1,6 +1,8 @@
 package unitTestFWK;
 
 import java.io.File;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -17,12 +19,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class XMLResultHistory {
+public class XMLStorage implements Storage {
 	private Document document;
 	private Element rootElement;
 	private String fileName;
 
-	public XMLResultHistory(String fileName) {
+	public XMLStorage(String fileName) {
 		this.fileName = fileName;
 		try {
 			DocumentBuilderFactory docFactory =
@@ -39,14 +41,36 @@ public class XMLResultHistory {
 		}
 	}
 
-	public void saveResults(Test test) {
+	@Override
+	public boolean storeSuiteResults(TestSuite suite) {
+		Collection<Test> tests = suite.getTests();
+		for (Test test : tests) {
+			saveResults(test);
+		}
+		try {
+			generateDocument();
+		}
+		catch (TransformerException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public HashMap<String, TestResult> restoreSuiteResults() {
+		// TODO hacer
+		return null;
+	}
+
+	private void saveResults(Test test) {
 		Element testElement = document.createElement("TestCase");
 		testElement.setAttribute("name", test.getName());
 		testElement.setAttribute("status", test.getResult().getCode());
 		rootElement.appendChild(testElement);
 	}
 
-	public void generateDocument() throws TransformerException {
+	private void generateDocument() throws TransformerException {
 		// Write the content into xml file
 		TransformerFactory transformerFactory =
 				TransformerFactory.newInstance();
@@ -58,7 +82,7 @@ public class XMLResultHistory {
 	}
 
 	// Convierte el XMLHistory en un HashSet
-	public void restoreDocument(String fileName) {
+	private void restoreDocument(String fileName) {
 		System.out.println("entro en el metodo restoreDocument");
 		HashSet<TagList> tags = new HashSet<TagList>();
 		try {
@@ -96,14 +120,12 @@ public class XMLResultHistory {
 		}
 		System.out.println("salio del metodo restoreDocument");
 		// return tags;
-
 	}
 
-	public String getTagValue(String tag, Element elemento) {
+	private String getTagValue(String tag, Element elemento) {
 		NodeList lista =
 				elemento.getElementsByTagName(tag).item(0).getChildNodes();
 		Node valor = (Node) lista.item(0);
 		return valor.getNodeValue();
 	}
-
 }

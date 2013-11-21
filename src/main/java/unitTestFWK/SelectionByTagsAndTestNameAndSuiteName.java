@@ -5,36 +5,37 @@ import java.util.regex.Pattern;
 
 public class SelectionByTagsAndTestNameAndSuiteName extends SelectionTemplate {
 
-	public SelectionByTagsAndTestNameAndSuiteName(TagList tags, 
+	public SelectionByTagsAndTestNameAndSuiteName(TagList tags,
 			String testCaseRegex, String testSuiteRegex) {
-		super(tags, testCaseRegex, testSuiteRegex, new HashMap<String, TestResult>());
+		super(tags, testCaseRegex, testSuiteRegex,
+				new HashMap<String, TestResult>());
 	}
 
 	@Override
 	public boolean isSelected(Test test) {
-		if ( isSuite(test) ){
+		if (isSuite(test)) {
 			return true;
 		}
-		
-		if ( !isRegexValid(testCaseRegex) || !isRegexValid(testSuiteRegex) ){
+
+		if (!isRegexValid(testCaseRegex) || !isRegexValid(testSuiteRegex)) {
 			return false;
 		}
-		
+
 		boolean tagsOK = false;
-		if( test.getTagList().containsAtLeastOneOf(tags) ){
+		if (test.getTagList().containsAtLeastOneOf(tags)) {
 			tagsOK = true;
 		}
-		
+
 		boolean testOK = Pattern.matches(testCaseRegex, test.getName());
-		
+
 		boolean suiteOK = false;
-		for( String suiteName : test.getSuites() ){
-			if( Pattern.matches(testSuiteRegex, suiteName) ){
+		for (String suiteName : test.getSuites()) {
+			if (Pattern.matches(testSuiteRegex, suiteName)) {
 				suiteOK = true;
 				break;
 			}
 		}
-		
+
 		return tagsOK && testOK && suiteOK;
 	}
 

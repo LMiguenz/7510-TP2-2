@@ -21,7 +21,7 @@ public class testUnitFwk4 {
 	public void tearDown() throws Exception {}
 
 	@Test
-	public void testPerformance() {
+	public void testPerformanceNoFailNorErrorNorNew() {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
 		TestCaseOk testCase1 = new TestCaseOk("T1");
@@ -39,7 +39,7 @@ public class testUnitFwk4 {
 			e.printStackTrace();
 		}
 
-		testRunner.setXMLHistoryFileName("history.xml");
+//		testRunner.setXMLHistoryFileName("history.xml");
 
 		/* Corrida inicial */
 		testRunner.startTesting(testSuite);

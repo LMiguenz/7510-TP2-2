@@ -20,7 +20,7 @@ public class testUnitFwk2 {
 	public void tearDown() throws Exception {}
 
 	@Test
-	public void testPerformance() {
+	public void testPerformanceSuccessful() {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
 		TestCasePerformance testCase = new TestCasePerformance("T1");

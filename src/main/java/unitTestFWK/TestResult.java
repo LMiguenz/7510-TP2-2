@@ -6,25 +6,18 @@ package unitTestFWK;
  * 
  * @author Miguenz, Rodriguez, Suárez */
 public abstract class TestResult {
+	public final static String TEST_OK_CODE = "Ok";
+	public final static String TEST_FAIL_CODE = "Fail";
+	public final static String TEST_ERROR_CODE = "Error";
 
 	protected String testName;
-	protected String cod;
 
 	public TestResult(String testName) {
 		this.testName = testName;
-		this.cod = "OK";
 	}
 
 	public String print() {
 		return "";
-	}
-	
-	public void setCodigo(String cod){
-		this.cod = cod;
-	}
-
-	public String getCodigo() {
-		return cod;
 	}
 	
 	public String getTestName() {

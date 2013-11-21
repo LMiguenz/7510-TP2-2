@@ -5,7 +5,6 @@ public class TestResultError extends TestResult {
 
 	public TestResultError(String testName) {
 		super(testName);
-		setCodigo("ERROR");
 	}
 
 	public String print() {
@@ -19,6 +18,6 @@ public class TestResultError extends TestResult {
 
 	@Override
 	public String getCode() {
-		return "Error";
+		return TEST_ERROR_CODE;
 	}
 }

@@ -21,7 +21,7 @@ public class testUnitFwk1 {
 	public void tearDown() throws Exception {}
 
 	@Test
-	public void testPerformance() {
+	public void testPerformanceFailed() {
 		TestRunner testRunner = new TestRunner();
 		TestSuite testSuite = new TestSuite("TS");
 		TestCasePerformance testCase = new TestCasePerformance("T1");

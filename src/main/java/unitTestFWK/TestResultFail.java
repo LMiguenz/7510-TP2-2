@@ -4,7 +4,6 @@ public class TestResultFail extends TestResult {
 	
 	public TestResultFail(String testName) {
 		super (testName);
-		setCodigo("FAIL");
 	}
 	
 	public String print() {
@@ -18,6 +17,6 @@ public class TestResultFail extends TestResult {
 
 	@Override
 	public String getCode() {
-		return "Fail";
+		return TEST_FAIL_CODE;
 	}
 }

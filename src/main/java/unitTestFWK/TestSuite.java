@@ -98,8 +98,8 @@ public class TestSuite extends Test {
 		selector = new SelectionByTagsOrTestNameOrSuiteName(tags, testRegex, suiteRegex);
 	}
 
-	public void setToRunByTestResult(HashMap<String, TestResult> xml){
-		selector = new SelectionByTestResult(xml);
+	public void setToRunByTestResult(HashMap<String, TestResult> hashMap){
+		selector = new SelectionByTestResult(hashMap);
 	}
 
 	public Collection<Test> getTests(){
