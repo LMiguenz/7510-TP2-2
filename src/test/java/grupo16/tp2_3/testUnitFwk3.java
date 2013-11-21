@@ -47,7 +47,7 @@ public class testUnitFwk3 {
 			e.printStackTrace();
 		}
 
-		testRunner.setXMLHistoryFileName("/home/pelele/Descargas/history.xml");
+		testRunner.setXMLHistoryFileName("history.xml");
 
 		/* Corrida inicial */
 		testRunner.startTesting(testSuite);

@@ -39,7 +39,7 @@ public class testUnitFwk4 {
 			e.printStackTrace();
 		}
 
-		testRunner.setXMLHistoryFileName("/home/martin/Descargas/history.xml");
+		testRunner.setXMLHistoryFileName("history.xml");
 
 		/* Corrida inicial */
 		testRunner.startTesting(testSuite);
