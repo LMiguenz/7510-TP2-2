@@ -1,6 +1,7 @@
 package unitTestFWK;
 
 public class TestResultOk extends TestResult {
+	public final static String TEST_CODE = "Ok";
 	
 	public TestResultOk(String testName) {
 		super (testName);
@@ -17,6 +18,6 @@ public class TestResultOk extends TestResult {
 
 	@Override
 	public String getCode() {
-		return TEST_OK_CODE;
+		return TEST_CODE;
 	}
 }

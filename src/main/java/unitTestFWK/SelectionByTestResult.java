@@ -12,7 +12,7 @@ public class SelectionByTestResult extends SelectionTemplate {
 	public boolean isSelected(Test test) {
 		if (hash.containsKey(test.getName())) {
 			TestResult result = hash.get(test.getName());
-			if (result.getCode() == TestResult.TEST_OK_CODE) {
+			if (result.getCode() == TestResultOk.TEST_CODE) {
 				return false;
 			}
 		}
