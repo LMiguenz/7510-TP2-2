@@ -2,6 +2,7 @@ package unitTestFWK;
 
 
 public class TestResultError extends TestResult {
+	public final static String TEST_CODE = "Error";
 
 	public TestResultError(String testName) {
 		super(testName);
@@ -18,6 +19,6 @@ public class TestResultError extends TestResult {
 
 	@Override
 	public String getCode() {
-		return TEST_ERROR_CODE;
+		return TEST_CODE;
 	}
 }

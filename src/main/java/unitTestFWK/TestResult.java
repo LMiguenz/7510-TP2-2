@@ -6,10 +6,6 @@ package unitTestFWK;
  * 
  * @author Miguenz, Rodriguez, Suárez */
 public abstract class TestResult {
-	public final static String TEST_OK_CODE = "Ok";
-	public final static String TEST_FAIL_CODE = "Fail";
-	public final static String TEST_ERROR_CODE = "Error";
-
 	protected String testName;
 
 	public TestResult(String testName) {

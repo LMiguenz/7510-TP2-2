@@ -1,6 +1,7 @@
 package unitTestFWK;
 
 public class TestResultFail extends TestResult {
+	public final static String TEST_CODE = "Fail";
 	
 	public TestResultFail(String testName) {
 		super (testName);
@@ -17,6 +18,6 @@ public class TestResultFail extends TestResult {
 
 	@Override
 	public String getCode() {
-		return TEST_FAIL_CODE;
+		return TEST_CODE;
 	}
 }
