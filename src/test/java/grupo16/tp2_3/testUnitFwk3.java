@@ -16,6 +16,7 @@ import unitTestFWK.TestResultFail;
 import unitTestFWK.TestResultOk;
 import unitTestFWK.TestRunner;
 import unitTestFWK.TestSuite;
+import unitTestFWK.XMLResultHistory;
 
 public class testUnitFwk3 {
 
@@ -89,10 +90,13 @@ public class testUnitFwk3 {
 		// TODO poner la llamada al run que solo ejecute los fallidos segun
 		// un archivo xml de historial
 
+		//testRunner.showXMLHistoryFileName("history.xml");
+		
 		HashMap<String, TestResult> xmlHardCode = new HashMap<String, TestResult>();
 		xmlHardCode.put(testCase1.getName(), testCase1.getResult());
 		xmlHardCode.put(testCase2.getName(), testCase2.getResult());
 		xmlHardCode.put(testCase3.getName(), testCase3.getResult());
+		
 		
 		
 		testSuite.setToRunByTestResult(xmlHardCode);

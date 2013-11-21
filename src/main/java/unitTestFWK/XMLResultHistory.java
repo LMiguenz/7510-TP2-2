@@ -62,6 +62,7 @@ public class XMLResultHistory {
 	
 	//Convierte el XMLHistory en un HashSet
 	public void restoreDocument(String fileName){
+		System.out.println ("entro en el metodo restoreDocument");
 		HashSet<TagList> tags = new HashSet<TagList>();
 		try{
 			File xmlFile = new File(fileName);
@@ -72,15 +73,19 @@ public class XMLResultHistory {
 			 
 			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 		 
-			NodeList nList = doc.getElementsByTagName("TestsResults");
+			NodeList nList = doc.getElementsByTagName("TestCase");
+			int totalTests = nList.getLength();
+			
+			System.out.println("Número total de personas : " + totalTests);
 		 
-			for (int temp = 0; temp < nList.getLength(); temp++) {
+			for (int temp = 1; temp < nList.getLength(); temp++) {
 				 
-				Node nNode = nList.item(temp);
+				Node testCaseNode = nList.item(temp);
 		 
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					System.out.println("NAME : " + eElement.getElementsByTagName("TestCase").item(1).getTextContent());
+				if (testCaseNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) testCaseNode;
+					System.out.println("NAME : " + getTagValue("name",eElement));
+					System.out.println("STATUS : " + getTagValue("status",eElement));
 				}
 			}
 
@@ -88,7 +93,15 @@ public class XMLResultHistory {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		System.out.println ("salio del metodo restoreDocument");
 		//return tags;
 		
 	}
+	
+	public String getTagValue(String tag, Element elemento) {
+		NodeList lista = elemento.getElementsByTagName(tag).item(0).getChildNodes();
+		Node valor = (Node) lista.item(0);
+		return valor.getNodeValue();
+	}
+
 }
