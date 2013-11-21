@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import unitTestFWK.MemoryHashStorage;
+import unitTestFWK.Storage;
 import unitTestFWK.TestExistsException;
 import unitTestFWK.TestResultFail;
 import unitTestFWK.TestResultOk;
@@ -38,8 +40,9 @@ public class testUnitFwk4 {
 		catch (TestExistsException e) {
 			e.printStackTrace();
 		}
-
-//		testRunner.setXMLHistoryFileName("history.xml");
+		
+		Storage storage = new MemoryHashStorage();
+		testRunner.setStorage(storage);
 
 		/* Corrida inicial */
 		testRunner.startTesting(testSuite);
@@ -70,8 +73,7 @@ public class testUnitFwk4 {
 				.getCode());
 
 		/* Hago de nuevo la corrida */
-		// TODO poner la llamada al run que solo ejecute los fallidos segun
-		// un archivo xml de historial
+		testSuite.setToRunByTestResult(storage.restoreSuiteResults());;
 		testRunner.startTesting(testSuite);
 
 		/* Verifico la nueva corrida */

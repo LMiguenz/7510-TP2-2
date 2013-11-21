@@ -10,10 +10,12 @@ public class SelectionByTestResult extends SelectionTemplate {
 
 	@Override
 	public boolean isSelected(Test test) {
-		if (hash.containsKey(test.getName())
-				&& test.getResult().getCode() != TestResult.TEST_OK_CODE) {
-			return true;
+		if (hash.containsKey(test.getName())) {
+			TestResult result = hash.get(test.getName());
+			if (result.getCode() == TestResult.TEST_OK_CODE) {
+				return false;
+			}
 		}
-		return false;
+		return true;
 	}
 }

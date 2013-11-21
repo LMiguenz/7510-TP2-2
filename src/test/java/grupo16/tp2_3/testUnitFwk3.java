@@ -45,7 +45,6 @@ public class testUnitFwk3 {
 			e.printStackTrace();
 		}
 
-//		Storage storage = new XMLStorage("history.xml");
 		Storage storage = new MemoryHashStorage();
 		testRunner.setStorage(storage);
 
