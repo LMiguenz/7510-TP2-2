@@ -64,7 +64,7 @@ public class testUnitFwk3 {
 	@Test
 	public void testStorageWithFailedAndErrorAndNewXML() {
 		storage = new XMLStorage("history.xml");
-
+		
 		primeraCorrida();
 		segundaCorrida();
 	}

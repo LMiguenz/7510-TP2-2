@@ -3,8 +3,6 @@ package unitTestFWK;
 import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -59,10 +57,51 @@ public class XMLStorage implements Storage {
 
 	@Override
 	public HashMap<String, TestResult> restoreSuiteResults() {
-		// TODO hacer
-		return null;
+		HashMap<String, TestResult> hash = new HashMap<String, TestResult>();
+		try {
+			File xmlFile = new File(fileName);
+			DocumentBuilderFactory dbFactory = 	DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(xmlFile);
+			doc.getDocumentElement().normalize();
+			
+			NodeList nList = doc.getElementsByTagName("TestCase");
+
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				Node testCaseNode = nList.item(temp);
+
+				if (testCaseNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) testCaseNode;
+					String testName = eElement.getAttribute("name");
+					String resultCode = eElement.getAttribute("status");
+					TestResult result = generarTestResultPorTipo(testName, resultCode);
+					hash.put(testName, result);
+				}
+			}
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return hash;
 	}
 
+	private TestResult generarTestResultPorTipo (String testName, String resultCode){
+		TestResult testResult;
+		if (resultCode.equals("Fail")){
+			testResult = new TestResultFail(testName);
+		}
+		else{ 
+			if (resultCode.equals("Error")){
+			testResult = new TestResultError(testName);
+			}
+			else{
+				testResult = new TestResultOk(testName);
+			}
+		}
+		return testResult;
+	}
+	
 	private void saveResults(Test test) {
 		Element testElement = document.createElement("TestCase");
 		testElement.setAttribute("name", test.getName());
@@ -81,51 +120,5 @@ public class XMLStorage implements Storage {
 		transformer.transform(source, result);
 	}
 
-	// Convierte el XMLHistory en un HashSet
-	private void restoreDocument(String fileName) {
-		System.out.println("entro en el metodo restoreDocument");
-		HashSet<TagList> tags = new HashSet<TagList>();
-		try {
-			File xmlFile = new File(fileName);
-			DocumentBuilderFactory dbFactory =
-					DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(xmlFile);
-			doc.getDocumentElement().normalize();
-
-			System.out.println("Root element :"
-					+ doc.getDocumentElement().getNodeName());
-
-			NodeList nList = doc.getElementsByTagName("TestCase");
-			int totalTests = nList.getLength();
-
-			System.out.println("Número total de personas : " + totalTests);
-
-			for (int temp = 1; temp < nList.getLength(); temp++) {
-
-				Node testCaseNode = nList.item(temp);
-
-				if (testCaseNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) testCaseNode;
-					System.out.println("NAME : "
-							+ getTagValue("name", eElement));
-					System.out.println("STATUS : "
-							+ getTagValue("status", eElement));
-				}
-			}
-
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("salio del metodo restoreDocument");
-		// return tags;
-	}
-
-	private String getTagValue(String tag, Element elemento) {
-		NodeList lista =
-				elemento.getElementsByTagName(tag).item(0).getChildNodes();
-		Node valor = (Node) lista.item(0);
-		return valor.getNodeValue();
-	}
+	
 }
