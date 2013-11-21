@@ -16,6 +16,11 @@ public abstract class TestResult {
 	public String print() {
 		return "";
 	}
+	
+	
+	public String getTestName() {
+		return testName;
+	}
 
 	public abstract void updateMe(ResultPrinter printer);
 

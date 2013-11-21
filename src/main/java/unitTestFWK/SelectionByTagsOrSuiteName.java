@@ -1,11 +1,12 @@
 package unitTestFWK;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class SelectionByTagsOrSuiteName extends SelectionTemplate {
 
 	public SelectionByTagsOrSuiteName(TagList tags, String testSuiteRegex) {
-		super(tags, "", testSuiteRegex);
+		super(tags, "", testSuiteRegex, new HashMap<String, TestResult>());
 	}
 
 	@Override

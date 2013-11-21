@@ -43,4 +43,10 @@ public class TestRunner {
 	public void setXMLHistoryFileName(String fileName) {
 		fileXMLhistoryName = fileName;
 	}
+
+	public void showXMLHistoryFileName(String fileName) {
+		XMLResultHistory history = new XMLResultHistory(fileName);
+		history.restoreDocument(fileName);
+	}
+
 }

@@ -97,7 +97,11 @@ public class TestSuite extends Test {
 	public void setToRunByTagsOrTestNameOrSuiteName(TagList tags, String testRegex, String suiteRegex){
 		selector = new SelectionByTagsOrTestNameOrSuiteName(tags, testRegex, suiteRegex);
 	}
-	
+
+	public void setToRunByTestResult(HashMap<String, TestResult> xml){
+		selector = new SelectionByTestResult(xml);
+	}
+
 	public Collection<Test> getTests(){
 		return this.tests.values();
 	}

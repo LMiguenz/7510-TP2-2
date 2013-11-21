@@ -1,9 +1,11 @@
 package unitTestFWK;
 
+import java.util.HashMap;
+
 public class SelectionAlways extends SelectionTemplate {
 
 	public SelectionAlways() {
-		super(new TagList(), "", "");
+		super(new TagList(), "", "", new HashMap<String, TestResult>());
 	}
 
 	@Override

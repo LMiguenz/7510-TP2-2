@@ -1,10 +1,12 @@
 package unitTestFWK;
+
+import java.util.HashMap;
 //import main.java.Test;
 
 public class SelectionByTags extends SelectionTemplate {
 
 	public SelectionByTags(TagList tags) {
-		super(tags, "", "");
+		super(tags, "", "", new HashMap<String, TestResult>());
 	}
 	
 	@Override
