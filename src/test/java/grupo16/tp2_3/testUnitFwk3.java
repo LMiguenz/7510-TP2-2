@@ -14,27 +14,31 @@ import unitTestFWK.TestResultFail;
 import unitTestFWK.TestResultOk;
 import unitTestFWK.TestRunner;
 import unitTestFWK.TestSuite;
+import unitTestFWK.XMLStorage;
 
 public class testUnitFwk3 {
+	private static TestRunner testRunner;
+	private static TestSuite testSuite;
+	private static TestCaseOk testCase1;
+	private static TestCaseError testCase2;
+	private static TestCaseFail testCase3;
+	private static TestCaseOk testCase4;
+	private static TestResultOk resultExpectedOk;
+	private static TestResultError resultExpectedError;
+	private static TestResultFail resultExpectedFail;
+	private static Storage storage;
 
 	@Before
-	public void setUp() throws Exception {}
-
-	@After
-	public void tearDown() throws Exception {}
-
-	@Test
-	public void testStorageWithFailedAndErrorAndNew() {
-		TestRunner testRunner = new TestRunner();
-		TestSuite testSuite = new TestSuite("TS");
-		TestCaseOk testCase1 = new TestCaseOk("T1");
-		TestCaseError testCase2 = new TestCaseError("T2");
-		TestCaseFail testCase3 = new TestCaseFail("T3");
-		TestCaseOk testCase4 = new TestCaseOk("T4");
-		TestResultOk resultExpectedOk = new TestResultOk("expectedOk");
-		TestResultError resultExpectedError =
-				new TestResultError("expectedError");
-		TestResultFail resultExpectedFail = new TestResultFail("expectedFail");
+	public void setUp() throws Exception {
+		testRunner = new TestRunner();
+		testSuite = new TestSuite("TS");
+		testCase1 = new TestCaseOk("T1");
+		testCase2 = new TestCaseError("T2");
+		testCase3 = new TestCaseFail("T3");
+		testCase4 = new TestCaseOk("T4");
+		resultExpectedOk = new TestResultOk("expectedOk");
+		resultExpectedError = new TestResultError("expectedError");
+		resultExpectedFail = new TestResultFail("expectedFail");
 
 		try {
 			testSuite.addTest(testCase1);
@@ -44,11 +48,29 @@ public class testUnitFwk3 {
 		catch (TestExistsException e) {
 			e.printStackTrace();
 		}
+	}
 
-		Storage storage = new MemoryHashStorage();
+	@After
+	public void tearDown() throws Exception {}
+
+	@Test
+	public void testStorageWithFailedAndErrorAndNewMemoryHash() {
+		storage = new MemoryHashStorage();
+
+		primeraCorrida();
+		segundaCorrida();
+	}
+
+	@Test
+	public void testStorageWithFailedAndErrorAndNewXML() {
+		storage = new XMLStorage("history.xml");
+
+		primeraCorrida();
+		segundaCorrida();
+	}
+
+	private void primeraCorrida() {
 		testRunner.setStorage(storage);
-
-		/* Corrida inicial */
 		testRunner.startTesting(testSuite);
 
 		assertEquals(resultExpectedOk.getCode(), testCase1.getResult()
@@ -57,7 +79,9 @@ public class testUnitFwk3 {
 				.getCode());
 		assertEquals(resultExpectedFail.getCode(), testCase3.getResult()
 				.getCode());
+	}
 
+	private void segundaCorrida() {
 		/* -------------Segunda corrida --------- */
 		/* El T1 no se deberia ejecutar. De ejecutarse, su resultado seria
 		 * de tipo "Ok". Se le cambia a tipo "Fail" para demostrar que no se
@@ -83,13 +107,10 @@ public class testUnitFwk3 {
 		catch (TestExistsException e) {
 			e.printStackTrace();
 		}
-
-		/* Hago de nuevo la corrida */
-		testSuite.setToRunByTestResult(storage.restoreSuiteResults());;
-
+		
+		testSuite.setToRunByTestResult(storage.restoreSuiteResults());
 		testRunner.startTesting(testSuite);
 
-		/* Verifico la nueva corrida */
 		assertEquals(resultExpectedFail.getCode(), testCase1.getResult()
 				.getCode());
 		assertEquals(resultExpectedError.getCode(), testCase2.getResult()
